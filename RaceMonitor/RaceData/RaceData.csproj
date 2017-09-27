@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{256F8399-66EB-4CF9-9F41-2FF6B1DAE8C8}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>RaceData</RootNamespace>
     <AssemblyName>RaceData</AssemblyName>
@@ -29,9 +29,14 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
@@ -47,7 +52,13 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AthleteRaceStatus.cs" />
+    <Compile Include="ControlForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="IAthleteUpdateHandler.cs" />
+    <Compile Include="ListView.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Messages\AthleteUpdate.cs" />
     <Compile Include="Messages\DidNotFinishUpdate.cs" />
     <Compile Include="Messages\DidNotStartUpdate.cs" />
@@ -55,6 +66,7 @@
     <Compile Include="Messages\LocationUpdate.cs" />
     <Compile Include="Messages\RegistrationUpdate.cs" />
     <Compile Include="Messages\StartedUpdate.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="RaceCourse.cs" />
     <Compile Include="RaceEvent.cs" />
     <Compile Include="SimluatedDataSource.cs" />
@@ -64,6 +76,12 @@
   <ItemGroup>
     <EmbeddedResource Include="AthleteObserver.resx">
       <DependentUpon>AthleteObserver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlForm.resx">
+      <DependentUpon>ControlForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ListView.resx">
+      <DependentUpon>ListView.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -7,12 +7,24 @@ using System.Windows.Forms;
 
 namespace RaceData
 {
-    class AthleteObserver : Form
+    public class AthleteObserver : Form
     {
         private Dictionary<int, Athlete> ObservedAthletes = new Dictionary<int, Athlete>();
 
         public void Update(Subject subject)
         {
+
+        }
+
+        private void InitializeComponent()
+        {
+            this.SuspendLayout();
+            // 
+            // AthleteObserver
+            // 
+            this.ClientSize = new System.Drawing.Size(403, 372);
+            this.Name = "AthleteObserver";
+            this.ResumeLayout(false);
 
         }
     }

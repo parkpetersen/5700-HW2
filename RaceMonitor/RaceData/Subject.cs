@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace RaceData
 {
-    class Subject
+    public class Subject
     {
         public List<AthleteObserver> Subscribers { get; } = new List<AthleteObserver>();
 
