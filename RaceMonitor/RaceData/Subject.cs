@@ -30,7 +30,7 @@ namespace RaceData
         {
             foreach(AthleteObserver observer in Subscribers)
             {
-
+                observer.Update();
             }
         }
     }

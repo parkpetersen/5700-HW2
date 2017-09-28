@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace RaceData
 {
@@ -11,6 +12,7 @@ namespace RaceData
     {
         private Button ListViewButton;
         private ListView ListView;
+        SimluatedDataSource DataSource;
         
         private readonly List<Athlete> athletes = new List<Athlete>();
 
@@ -47,6 +49,9 @@ namespace RaceData
         {
             ListView = new ListView();
             ListView.Show();
+            DataSource = new SimluatedDataSource();
+            DataSource.InputFilename = "../../../../SimulationData/Short Race Simulation-01";
+            
         }
     }
 }

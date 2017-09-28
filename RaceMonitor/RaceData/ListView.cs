@@ -43,5 +43,11 @@ namespace RaceData
             this.ResumeLayout(false);
 
         }
+
+        void RefreshDisplay()
+        {
+            athleteListView.Items.Clear();
+            foreach (Athlete athlete in Obser)
+        }
     }
 }
