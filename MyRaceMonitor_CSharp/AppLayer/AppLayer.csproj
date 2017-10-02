@@ -44,9 +44,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Athlete.cs" />
+    <Compile Include="FinishedHandler.cs" />
+    <Compile Include="DidNotStartHandler.cs" />
     <Compile Include="DataProcessor.cs" />
+    <Compile Include="DidNotFinishHandler.cs" />
+    <Compile Include="LocationHandler.cs" />
+    <Compile Include="Observer.cs" />
+    <Compile Include="ProcessStrategy.cs" />
+    <Compile Include="ProcessStrategyFactory.cs" />
+    <Compile Include="RegistrationHandler.cs" />
     <Compile Include="SimulatorController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StartedHandler.cs" />
+    <Compile Include="Subject.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

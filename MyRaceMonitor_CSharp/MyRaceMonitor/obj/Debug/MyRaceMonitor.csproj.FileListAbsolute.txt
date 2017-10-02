@@ -1,0 +1,11 @@
+C:\Users\parkp\Desktop\5700\RaceMonitor\5700-HW2\MyRaceMonitor_CSharp\MyRaceMonitor\bin\Debug\MyRaceMonitor.exe.config
+C:\Users\parkp\Desktop\5700\RaceMonitor\5700-HW2\MyRaceMonitor_CSharp\MyRaceMonitor\bin\Debug\MyRaceMonitor.exe
+C:\Users\parkp\Desktop\5700\RaceMonitor\5700-HW2\MyRaceMonitor_CSharp\MyRaceMonitor\bin\Debug\MyRaceMonitor.pdb
+C:\Users\parkp\Desktop\5700\RaceMonitor\5700-HW2\MyRaceMonitor_CSharp\MyRaceMonitor\bin\Debug\AppLayer.dll
+C:\Users\parkp\Desktop\5700\RaceMonitor\5700-HW2\MyRaceMonitor_CSharp\MyRaceMonitor\bin\Debug\RaceData.dll
+C:\Users\parkp\Desktop\5700\RaceMonitor\5700-HW2\MyRaceMonitor_CSharp\MyRaceMonitor\bin\Debug\AppLayer.pdb
+C:\Users\parkp\Desktop\5700\RaceMonitor\5700-HW2\MyRaceMonitor_CSharp\MyRaceMonitor\obj\Debug\MyRaceMonitor.csprojResolveAssemblyReference.cache
+C:\Users\parkp\Desktop\5700\RaceMonitor\5700-HW2\MyRaceMonitor_CSharp\MyRaceMonitor\obj\Debug\MyRaceMonitor.Properties.Resources.resources
+C:\Users\parkp\Desktop\5700\RaceMonitor\5700-HW2\MyRaceMonitor_CSharp\MyRaceMonitor\obj\Debug\MyRaceMonitor.csproj.GenerateResource.Cache
+C:\Users\parkp\Desktop\5700\RaceMonitor\5700-HW2\MyRaceMonitor_CSharp\MyRaceMonitor\obj\Debug\MyRaceMonitor.exe
+C:\Users\parkp\Desktop\5700\RaceMonitor\5700-HW2\MyRaceMonitor_CSharp\MyRaceMonitor\obj\Debug\MyRaceMonitor.pdb
