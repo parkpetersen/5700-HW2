@@ -9,12 +9,12 @@ namespace AppLayer
 {
     class RegistrationHandler : ProcessStrategy
     {
-        public override void Process(AthleteUpdate updateMessage)
+        public override void Process(AthleteUpdate updateMessage, List<Athlete> athleteList)
         {
             Console.WriteLine("Registering new Athlete.");
             RegistrationUpdate regUpdate = updateMessage as RegistrationUpdate;
             Athlete MyNewAthlete = new Athlete(regUpdate.BibNumber, regUpdate.FirstName, regUpdate.LastName, regUpdate.Gender, regUpdate.Age);
-            DataProcessor.AthleteList.Add(MyNewAthlete);
+            athleteList.Add(MyNewAthlete);
             //Console.WriteLine(updateMessage.ToString());
         }
     }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using AppLayer;
+using GuiLayer;
 
 namespace MyRaceMonitor
 {
@@ -15,8 +16,13 @@ namespace MyRaceMonitor
         [STAThread]
         static void Main()
         {
-            SimulatorController controller = new SimulatorController();
-            controller.Run("../../../SimulationData/Short Race Simulation-01.csv");
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new ControlForm());
+            //ControlForm controlForm = new ControlForm();
+            //controlForm.Show();
+            //SimulatorController controller = new SimulatorController();
+            //controller.Run("../../../SimulationData/Short Race Simulation-01.csv");
         }
     }
 }

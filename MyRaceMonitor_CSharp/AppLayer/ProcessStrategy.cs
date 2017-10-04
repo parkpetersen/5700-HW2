@@ -10,6 +10,6 @@ namespace AppLayer
 {
     public abstract class ProcessStrategy
     {
-        public abstract void Process(AthleteUpdate updateMessage);
+        public abstract void Process(AthleteUpdate updateMessage, List<Athlete> athleteList);
     }
 }

@@ -1,4 +1,4 @@
-﻿
+﻿using System.Collections.Generic;
 using System.Threading;
 using RaceData;
 
@@ -7,9 +7,12 @@ namespace AppLayer
     public class SimulatorController
     {
         private SimulatedDataSource _simluatedData;
+        public List<Athlete> AthleteList;
         public void Run(string inputFileName)
         {
-            IAthleteUpdateHandler handler = new DataProcessor();
+            DataProcessor handler = new DataProcessor();
+            AthleteList = new List<Athlete>();
+            handler.ProcessorAthleteList = AthleteList;
             _simluatedData = new SimulatedDataSource()
             {
                 InputFilename = inputFileName,

@@ -9,3 +9,5 @@ C:\Users\parkp\Desktop\5700\RaceMonitor\5700-HW2\MyRaceMonitor_CSharp\MyRaceMoni
 C:\Users\parkp\Desktop\5700\RaceMonitor\5700-HW2\MyRaceMonitor_CSharp\MyRaceMonitor\obj\Debug\MyRaceMonitor.csproj.GenerateResource.Cache
 C:\Users\parkp\Desktop\5700\RaceMonitor\5700-HW2\MyRaceMonitor_CSharp\MyRaceMonitor\obj\Debug\MyRaceMonitor.exe
 C:\Users\parkp\Desktop\5700\RaceMonitor\5700-HW2\MyRaceMonitor_CSharp\MyRaceMonitor\obj\Debug\MyRaceMonitor.pdb
+C:\Users\parkp\Desktop\5700\RaceMonitor\5700-HW2\MyRaceMonitor_CSharp\MyRaceMonitor\bin\Debug\GuiLayer.dll
+C:\Users\parkp\Desktop\5700\RaceMonitor\5700-HW2\MyRaceMonitor_CSharp\MyRaceMonitor\bin\Debug\GuiLayer.pdb

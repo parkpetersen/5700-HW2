@@ -8,11 +8,11 @@ namespace AppLayer
 {
     public class Athlete : Subject
     {
-        int BibNumber { get; set; }
-        string FirstName { get; set; }
-        string Lastname { get; set; }
-        string Gender { get; set; }
-        int Age { get; set; }
+        public int BibNumber { get; set; }
+        public string FirstName { get; set; }
+        public string Lastname { get; set; }
+        public string Gender { get; set; }
+        public int Age { get; set; }
         List<Observer> ObserverList;
 
         public Athlete(int bibNum, string fName, string lName, string gender, int age)

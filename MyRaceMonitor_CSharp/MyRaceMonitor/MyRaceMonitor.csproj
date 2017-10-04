@@ -78,6 +78,10 @@
       <Project>{ae3e551a-be35-4529-aabb-1adaee9c77b6}</Project>
       <Name>AppLayer</Name>
     </ProjectReference>
+    <ProjectReference Include="..\GuiLayer\GuiLayer.csproj">
+      <Project>{cb9c2e9d-681c-4972-b5fd-2c2386c6c0ee}</Project>
+      <Name>GuiLayer</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

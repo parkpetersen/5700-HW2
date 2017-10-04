@@ -9,7 +9,7 @@ namespace AppLayer
 {
     class DidNotStartHandler : ProcessStrategy
     {
-        public override void Process(AthleteUpdate updateMessage)
+        public override void Process(AthleteUpdate updateMessage, List<Athlete> athleteList)
         {
             throw new NotImplementedException();
         }
