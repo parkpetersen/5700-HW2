@@ -4,3 +4,12 @@ C:\Users\parkp\Desktop\5700\RaceMonitor\5700-HW2\MyRaceMonitor_CSharp\AppLayer\b
 C:\Users\parkp\Desktop\5700\RaceMonitor\5700-HW2\MyRaceMonitor_CSharp\AppLayer\obj\Debug\AppLayer.csprojResolveAssemblyReference.cache
 C:\Users\parkp\Desktop\5700\RaceMonitor\5700-HW2\MyRaceMonitor_CSharp\AppLayer\obj\Debug\AppLayer.dll
 C:\Users\parkp\Desktop\5700\RaceMonitor\5700-HW2\MyRaceMonitor_CSharp\AppLayer\obj\Debug\AppLayer.pdb
+C:\Users\Parker Petersen\source\repos\RaceMonitor\MyRaceMonitor_CSharp\AppLayer\bin\Debug\AppLayer.dll
+C:\Users\Parker Petersen\source\repos\RaceMonitor\MyRaceMonitor_CSharp\AppLayer\bin\Debug\AppLayer.pdb
+C:\Users\Parker Petersen\source\repos\RaceMonitor\MyRaceMonitor_CSharp\AppLayer\bin\Debug\RaceData.dll
+C:\Users\Parker Petersen\source\repos\RaceMonitor\MyRaceMonitor_CSharp\AppLayer\obj\Debug\AppLayer.csprojResolveAssemblyReference.cache
+C:\Users\Parker Petersen\source\repos\RaceMonitor\MyRaceMonitor_CSharp\AppLayer\obj\Debug\AppLayer.csproj.CoreCompileInputs.cache
+C:\Users\Parker Petersen\source\repos\RaceMonitor\MyRaceMonitor_CSharp\AppLayer\obj\Debug\AppLayer.dll
+C:\Users\Parker Petersen\source\repos\RaceMonitor\MyRaceMonitor_CSharp\AppLayer\obj\Debug\AppLayer.pdb
+C:\Users\Parker Petersen\source\repos\RaceMonitor\MyRaceMonitor_CSharp\AppLayer\obj\Debug\AppLayer.AthleteObserver.resources
+C:\Users\Parker Petersen\source\repos\RaceMonitor\MyRaceMonitor_CSharp\AppLayer\obj\Debug\AppLayer.csproj.GenerateResource.Cache

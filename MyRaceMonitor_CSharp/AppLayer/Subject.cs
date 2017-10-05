@@ -8,8 +8,8 @@ namespace AppLayer
 {
     public interface Subject
     {
-        void registerObserver(Observer observer);
-        void removeObserver(Observer observer);
+        void registerObserver(AthleteObserver observer);
+        void removeObserver(AthleteObserver observer);
         void notifyObservers();
     }
 }

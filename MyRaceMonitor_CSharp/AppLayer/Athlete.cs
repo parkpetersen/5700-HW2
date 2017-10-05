@@ -13,27 +13,34 @@ namespace AppLayer
         public string Lastname { get; set; }
         public string Gender { get; set; }
         public int Age { get; set; }
-        List<Observer> ObserverList;
+        public string StartTime { get; set; }
+        public string FinishedTime { get; set; }
+        public float Location { get; set; }
+        public List<AthleteObserver> ObserverList;
 
         public Athlete(int bibNum, string fName, string lName, string gender, int age)
         {
-            ObserverList = new List<Observer>();
+            ObserverList = new List<AthleteObserver>();
             BibNumber = bibNum;
             FirstName = fName;
             Lastname = lName;
             Gender = gender;
             Age = age;
+            StartTime = "No Start";
+            FinishedTime = "No Finish";
+            Location = 0;
         }
         
-        public void registerObserver(Observer observer)
+        public void registerObserver(AthleteObserver observer)
         {
             if(observer != null && !ObserverList.Contains(observer))
             {
                 ObserverList.Add(observer);
+                observer.Notify(this);
             }
         }
 
-        public void removeObserver(Observer observer)
+        public void removeObserver(AthleteObserver observer)
         {
             if (ObserverList.Contains(observer))
             {
@@ -43,9 +50,9 @@ namespace AppLayer
 
         public void notifyObservers()
         {
-            foreach(Observer observer in ObserverList)
+            foreach(AthleteObserver observer in ObserverList)
             {
-                observer.update(Clone());
+                observer.Notify(this);
             }
         }
 

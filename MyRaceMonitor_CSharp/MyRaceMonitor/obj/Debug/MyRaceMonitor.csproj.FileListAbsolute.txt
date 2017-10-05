@@ -11,3 +11,18 @@ C:\Users\parkp\Desktop\5700\RaceMonitor\5700-HW2\MyRaceMonitor_CSharp\MyRaceMoni
 C:\Users\parkp\Desktop\5700\RaceMonitor\5700-HW2\MyRaceMonitor_CSharp\MyRaceMonitor\obj\Debug\MyRaceMonitor.pdb
 C:\Users\parkp\Desktop\5700\RaceMonitor\5700-HW2\MyRaceMonitor_CSharp\MyRaceMonitor\bin\Debug\GuiLayer.dll
 C:\Users\parkp\Desktop\5700\RaceMonitor\5700-HW2\MyRaceMonitor_CSharp\MyRaceMonitor\bin\Debug\GuiLayer.pdb
+C:\Users\Parker Petersen\source\repos\RaceMonitor\MyRaceMonitor_CSharp\MyRaceMonitor\bin\Debug\MyRaceMonitor.exe.config
+C:\Users\Parker Petersen\source\repos\RaceMonitor\MyRaceMonitor_CSharp\MyRaceMonitor\bin\Debug\MyRaceMonitor.exe
+C:\Users\Parker Petersen\source\repos\RaceMonitor\MyRaceMonitor_CSharp\MyRaceMonitor\bin\Debug\MyRaceMonitor.pdb
+C:\Users\Parker Petersen\source\repos\RaceMonitor\MyRaceMonitor_CSharp\MyRaceMonitor\bin\Debug\AppLayer.dll
+C:\Users\Parker Petersen\source\repos\RaceMonitor\MyRaceMonitor_CSharp\MyRaceMonitor\bin\Debug\GuiLayer.dll
+C:\Users\Parker Petersen\source\repos\RaceMonitor\MyRaceMonitor_CSharp\MyRaceMonitor\bin\Debug\RaceData.dll
+C:\Users\Parker Petersen\source\repos\RaceMonitor\MyRaceMonitor_CSharp\MyRaceMonitor\bin\Debug\AppLayer.pdb
+C:\Users\Parker Petersen\source\repos\RaceMonitor\MyRaceMonitor_CSharp\MyRaceMonitor\bin\Debug\GuiLayer.pdb
+C:\Users\Parker Petersen\source\repos\RaceMonitor\MyRaceMonitor_CSharp\MyRaceMonitor\bin\Debug\GuiLayer.dll.config
+C:\Users\Parker Petersen\source\repos\RaceMonitor\MyRaceMonitor_CSharp\MyRaceMonitor\obj\Debug\MyRaceMonitor.csprojResolveAssemblyReference.cache
+C:\Users\Parker Petersen\source\repos\RaceMonitor\MyRaceMonitor_CSharp\MyRaceMonitor\obj\Debug\MyRaceMonitor.Properties.Resources.resources
+C:\Users\Parker Petersen\source\repos\RaceMonitor\MyRaceMonitor_CSharp\MyRaceMonitor\obj\Debug\MyRaceMonitor.csproj.GenerateResource.Cache
+C:\Users\Parker Petersen\source\repos\RaceMonitor\MyRaceMonitor_CSharp\MyRaceMonitor\obj\Debug\MyRaceMonitor.csproj.CoreCompileInputs.cache
+C:\Users\Parker Petersen\source\repos\RaceMonitor\MyRaceMonitor_CSharp\MyRaceMonitor\obj\Debug\MyRaceMonitor.exe
+C:\Users\Parker Petersen\source\repos\RaceMonitor\MyRaceMonitor_CSharp\MyRaceMonitor\obj\Debug\MyRaceMonitor.pdb

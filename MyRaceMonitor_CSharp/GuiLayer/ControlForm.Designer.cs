@@ -28,37 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.ObserverListView = new System.Windows.Forms.ListView();
+            this.Title = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.listView2 = new System.Windows.Forms.ListView();
-            this.label2 = new System.Windows.Forms.Label();
+            this.ListDisplayButton = new System.Windows.Forms.Button();
+            this.SubscribedListView = new System.Windows.Forms.ListView();
+            this.Athlete = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ObservedAthletesLabel = new System.Windows.Forms.Label();
             this.AthleteListView = new System.Windows.Forms.ListView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
+            this.BibNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.FirstName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.LastName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Gender = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Age = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.AthleteListLabel = new System.Windows.Forms.Label();
+            this.SubscribeButton = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.StartButton = new System.Windows.Forms.Button();
             this.RefreshButton = new System.Windows.Forms.Button();
-            this.BibNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.FirstName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Gender = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Age = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.LastName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // listView1
+            // ObserverListView
             // 
-            this.listView1.Location = new System.Drawing.Point(12, 25);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(383, 169);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.SelectedIndexChanged += new System.EventHandler(this.listView1_SelectedIndexChanged);
+            this.ObserverListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Title});
+            this.ObserverListView.Location = new System.Drawing.Point(11, 25);
+            this.ObserverListView.Name = "ObserverListView";
+            this.ObserverListView.Size = new System.Drawing.Size(383, 169);
+            this.ObserverListView.TabIndex = 0;
+            this.ObserverListView.UseCompatibleStateImageBehavior = false;
+            this.ObserverListView.View = System.Windows.Forms.View.Details;
+            this.ObserverListView.SelectedIndexChanged += new System.EventHandler(this.ObserverListView_SelectedIndexChanged);
+            // 
+            // Title
+            // 
+            this.Title.Text = "";
+            this.Title.Width = 372;
             // 
             // label1
             // 
@@ -74,7 +86,7 @@
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.ListDisplayButton);
             this.groupBox1.Location = new System.Drawing.Point(452, 25);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(246, 169);
@@ -111,31 +123,49 @@
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // ListDisplayButton
             // 
-            this.button1.Location = new System.Drawing.Point(29, 44);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(84, 39);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.ListDisplayButton.Location = new System.Drawing.Point(29, 44);
+            this.ListDisplayButton.Name = "ListDisplayButton";
+            this.ListDisplayButton.Size = new System.Drawing.Size(84, 39);
+            this.ListDisplayButton.TabIndex = 0;
+            this.ListDisplayButton.Text = "List Display";
+            this.ListDisplayButton.UseVisualStyleBackColor = true;
+            this.ListDisplayButton.Click += new System.EventHandler(this.ListDisplayButton_Click);
             // 
-            // listView2
+            // SubscribedListView
             // 
-            this.listView2.Location = new System.Drawing.Point(12, 267);
-            this.listView2.Name = "listView2";
-            this.listView2.Size = new System.Drawing.Size(294, 196);
-            this.listView2.TabIndex = 3;
-            this.listView2.UseCompatibleStateImageBehavior = false;
+            this.SubscribedListView.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Athlete,
+            this.columnHeader1,
+            this.columnHeader2});
+            this.SubscribedListView.Location = new System.Drawing.Point(12, 267);
+            this.SubscribedListView.Name = "SubscribedListView";
+            this.SubscribedListView.Size = new System.Drawing.Size(294, 196);
+            this.SubscribedListView.TabIndex = 3;
+            this.SubscribedListView.UseCompatibleStateImageBehavior = false;
+            this.SubscribedListView.View = System.Windows.Forms.View.Details;
             // 
-            // label2
+            // Athlete
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(42, 251);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 13);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Subscribed To:";
+            this.Athlete.Text = "Bib";
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "1st Name";
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "LastName";
+            // 
+            // ObservedAthletesLabel
+            // 
+            this.ObservedAthletesLabel.AutoSize = true;
+            this.ObservedAthletesLabel.Location = new System.Drawing.Point(42, 251);
+            this.ObservedAthletesLabel.Name = "ObservedAthletesLabel";
+            this.ObservedAthletesLabel.Size = new System.Drawing.Size(79, 13);
+            this.ObservedAthletesLabel.TabIndex = 4;
+            this.ObservedAthletesLabel.Text = "Subscribed To:";
             // 
             // AthleteListView
             // 
@@ -147,27 +177,54 @@
             this.Age});
             this.AthleteListView.Location = new System.Drawing.Point(417, 265);
             this.AthleteListView.Name = "AthleteListView";
-            this.AthleteListView.Size = new System.Drawing.Size(280, 198);
+            this.AthleteListView.Size = new System.Drawing.Size(490, 198);
             this.AthleteListView.TabIndex = 5;
             this.AthleteListView.UseCompatibleStateImageBehavior = false;
+            this.AthleteListView.View = System.Windows.Forms.View.Details;
             // 
-            // label3
+            // BibNumber
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(449, 249);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 13);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Other Athletes";
+            this.BibNumber.Text = "BibNumber";
+            this.BibNumber.Width = 102;
             // 
-            // button5
+            // FirstName
             // 
-            this.button5.Location = new System.Drawing.Point(335, 298);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(59, 37);
-            this.button5.TabIndex = 7;
-            this.button5.Text = "<";
-            this.button5.UseVisualStyleBackColor = true;
+            this.FirstName.Text = "1st Name";
+            this.FirstName.Width = 89;
+            // 
+            // LastName
+            // 
+            this.LastName.Text = "Last Name";
+            this.LastName.Width = 105;
+            // 
+            // Gender
+            // 
+            this.Gender.Text = "Gender";
+            this.Gender.Width = 90;
+            // 
+            // Age
+            // 
+            this.Age.Text = "Age";
+            this.Age.Width = 92;
+            // 
+            // AthleteListLabel
+            // 
+            this.AthleteListLabel.AutoSize = true;
+            this.AthleteListLabel.Location = new System.Drawing.Point(449, 249);
+            this.AthleteListLabel.Name = "AthleteListLabel";
+            this.AthleteListLabel.Size = new System.Drawing.Size(45, 13);
+            this.AthleteListLabel.TabIndex = 6;
+            this.AthleteListLabel.Text = "Athletes";
+            // 
+            // SubscribeButton
+            // 
+            this.SubscribeButton.Location = new System.Drawing.Point(335, 298);
+            this.SubscribeButton.Name = "SubscribeButton";
+            this.SubscribeButton.Size = new System.Drawing.Size(59, 37);
+            this.SubscribeButton.TabIndex = 7;
+            this.SubscribeButton.Text = "<";
+            this.SubscribeButton.UseVisualStyleBackColor = true;
+            this.SubscribeButton.Click += new System.EventHandler(this.SubScribeButton_Click);
             // 
             // button6
             // 
@@ -180,7 +237,7 @@
             // 
             // StartButton
             // 
-            this.StartButton.Location = new System.Drawing.Point(312, 216);
+            this.StartButton.Location = new System.Drawing.Point(773, 76);
             this.StartButton.Name = "StartButton";
             this.StartButton.Size = new System.Drawing.Size(104, 25);
             this.StartButton.TabIndex = 9;
@@ -190,7 +247,7 @@
             // 
             // RefreshButton
             // 
-            this.RefreshButton.Location = new System.Drawing.Point(571, 469);
+            this.RefreshButton.Location = new System.Drawing.Point(768, 237);
             this.RefreshButton.Name = "RefreshButton";
             this.RefreshButton.Size = new System.Drawing.Size(109, 22);
             this.RefreshButton.TabIndex = 10;
@@ -198,34 +255,22 @@
             this.RefreshButton.UseVisualStyleBackColor = true;
             this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
             // 
-            // Gender
-            // 
-            this.Gender.DisplayIndex = 2;
-            // 
-            // Age
-            // 
-            this.Age.DisplayIndex = 3;
-            // 
-            // LastName
-            // 
-            this.LastName.DisplayIndex = 4;
-            // 
             // ControlForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(724, 495);
+            this.ClientSize = new System.Drawing.Size(937, 495);
             this.Controls.Add(this.RefreshButton);
             this.Controls.Add(this.StartButton);
             this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.SubscribeButton);
+            this.Controls.Add(this.AthleteListLabel);
             this.Controls.Add(this.AthleteListView);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.listView2);
+            this.Controls.Add(this.ObservedAthletesLabel);
+            this.Controls.Add(this.SubscribedListView);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.ObserverListView);
             this.Name = "ControlForm";
             this.Text = "Control Form";
             this.groupBox1.ResumeLayout(false);
@@ -236,18 +281,18 @@
 
         #endregion
 
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView ObserverListView;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ListView listView2;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button ListDisplayButton;
+        private System.Windows.Forms.ListView SubscribedListView;
+        private System.Windows.Forms.Label ObservedAthletesLabel;
         private System.Windows.Forms.ListView AthleteListView;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label AthleteListLabel;
+        private System.Windows.Forms.Button SubscribeButton;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button StartButton;
         private System.Windows.Forms.Button RefreshButton;
@@ -256,6 +301,10 @@
         private System.Windows.Forms.ColumnHeader Gender;
         private System.Windows.Forms.ColumnHeader Age;
         private System.Windows.Forms.ColumnHeader LastName;
+        private System.Windows.Forms.ColumnHeader Title;
+        private System.Windows.Forms.ColumnHeader Athlete;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
     }
 }
 
