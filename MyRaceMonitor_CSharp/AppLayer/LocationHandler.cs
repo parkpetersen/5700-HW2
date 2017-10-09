@@ -9,9 +9,12 @@ namespace AppLayer
 {
     class LocationHandler : ProcessStrategy
     {
-        public override void Process(AthleteUpdate updateMessage, List<Athlete> athleteList)
+        public override void Process(AthleteUpdate updateMessage, Dictionary<int, Athlete> athleteList)
         {
-            throw new NotImplementedException();
+            LocationUpdate update = updateMessage as LocationUpdate;
+            athleteList[update.BibNumber].Location = update.LocationOnCourse;
+            athleteList[update.BibNumber].LastUpdate = update.Timestamp;
+            athleteList[update.BibNumber].notifyObservers();
         }
     }
 }

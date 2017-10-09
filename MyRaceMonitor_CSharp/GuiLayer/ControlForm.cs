@@ -16,7 +16,7 @@ namespace GuiLayer
     {
         public SimulatorController controller;
         public List<AthleteObserver> observerList;
-        private AthleteObserver _selectedObserver;
+        private AthleteObserver _selectedObserver = null;
 
         public ControlForm()
         {
@@ -34,26 +34,27 @@ namespace GuiLayer
             SubscribedListView.Items.Clear();
             if(_selectedObserver != null)
             {
-                AthleteListLabel.Text = "Athletes:";
+                AthleteListLabel.Text = "Other Athletes:";
+                ObservedAthletesLabel.Text = $"Subjects of {_selectedObserver.title}";
 
             }
             else
             {
-                AthleteListLabel.Text = $"Not observed by {_selectedObserver.title}";
-                ObservedAthletesLabel.Text = $"Subjects of {_selectedObserver.title}";
+                AthleteListLabel.Text = $"Athletes";
+                ObservedAthletesLabel.Text = "No Observer Selected";
             }
-            foreach (Athlete athlete in controller.AthleteList)
+            foreach (int athleteKey in controller.AthleteList.Keys)
             {
                 ListViewItem item = new ListViewItem(new[]
             {
-                    athlete.BibNumber.ToString(),
-                    athlete.FirstName.ToString(),
-                    athlete.Lastname.ToString(),
-                    athlete.Gender.ToString(),
-                    athlete.Age.ToString()
+                    controller.AthleteList[athleteKey].BibNumber.ToString(),
+                    controller.AthleteList[athleteKey].FirstName.ToString(),
+                    controller.AthleteList[athleteKey].Lastname.ToString(),
+                    controller.AthleteList[athleteKey].Gender.ToString(),
+                    controller.AthleteList[athleteKey].Age.ToString()
                 })
-                { Tag = athlete };
-                if (_selectedObserver != null && athlete.ObserverList.Contains(_selectedObserver))
+                { Tag = controller.AthleteList[athleteKey] };
+                if (_selectedObserver != null && controller.AthleteList[athleteKey].ObserverList.Contains(_selectedObserver))
                 {
                     SubscribedListView.Items.Add(item);
                 }
@@ -64,75 +65,7 @@ namespace GuiLayer
             }
         }
             
-        /**
-        public void RefreshAthleteListView()
-        {
-            AthleteListView.Items.Clear();
-            if (_selectedObserver == null)
-            {
-                AthleteListLabel.Text = "Athletes:";
-                foreach (Athlete athlete in controller.AthleteList)
-                {
-                    ListViewItem item = new ListViewItem(new[]
-                {
-                    athlete.BibNumber.ToString(),
-                    athlete.FirstName.ToString(),
-                    athlete.Lastname.ToString(),
-                    athlete.Gender.ToString(),
-                    athlete.Age.ToString()
-                })
-                    { Tag = athlete };
-                    AthleteListView.Items.Add(item);
-                }
-            }
-            else
-            {
-                AthleteListLabel.Text = $"Not observed by {_selectedObserver.title}";
-                foreach (Athlete athlete in controller.AthleteList)
-                {
-                    if (!_selectedObserver.ObservedAthleteList.Contains(athlete))
-                    {
-                        ListViewItem item = new ListViewItem(new[]
-                    {
-                    athlete.BibNumber.ToString(),
-                    athlete.FirstName.ToString(),
-                    athlete.Lastname.ToString(),
-                    athlete.Gender.ToString(),
-                    athlete.Age.ToString()
-                })
-                        { Tag = athlete };
-                        AthleteListView.Items.Add(item);
-                    }
-                }
-            }
-
-        }
-
-        private void RefreshSubscribedListView()
-        {
-            SubscribedListView.Items.Clear();
-
-            if(_selectedObserver != null)
-            {
-                ObservedAthletesLabel.Text = $"Subjects of {_selectedObserver.title}";
-                foreach(Athlete athlete in _selectedObserver.ObservedAthleteList)
-                {
-                    ListViewItem item = new ListViewItem(new[]
-                    {
-                    athlete.BibNumber.ToString(),
-                    athlete.FirstName.ToString(),
-                    athlete.Lastname.ToString(),
-                })
-                    { Tag = athlete };
-                    SubscribedListView.Items.Add(item);
-                }
-            }
-            else
-            {
-                SubscribedListView.Items.Clear();
-            }
-        }
-    **/
+        
         private void ObserverListView_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ObserverListView.SelectedIndices.Count == 1)
@@ -144,8 +77,6 @@ namespace GuiLayer
                 _selectedObserver = null;
             }
             RefreshListViews();
-            //RefreshAthleteListView();
-            //RefreshSubscribedListView();
         }
 
         private void StartButton_Click(object sender, EventArgs e)
@@ -155,6 +86,9 @@ namespace GuiLayer
             controller = new SimulatorController();
             Thread myThread = new Thread(StartSimulation);
             myThread.Start();
+            Thread myThread2 = new Thread(RefreshTimer);
+            myThread2.Start();
+
          }
 
         public void StartSimulation()
@@ -171,17 +105,17 @@ namespace GuiLayer
         private void RefreshButton_Click(object sender, EventArgs e)
         {
             AthleteListView.Items.Clear();
-            foreach (Athlete athlete in controller.AthleteList)
+            foreach (int athleteKey in controller.AthleteList.Keys)
             {
                 ListViewItem item = new ListViewItem(new[]
                 {
-                    athlete.BibNumber.ToString(),
-                    athlete.FirstName.ToString(),
-                    athlete.Lastname.ToString(),
-                    athlete.Gender.ToString(),
-                    athlete.Age.ToString()
+                    controller.AthleteList[athleteKey].BibNumber.ToString(),
+                    controller.AthleteList[athleteKey].FirstName.ToString(),
+                    controller.AthleteList[athleteKey].Lastname.ToString(),
+                    controller.AthleteList[athleteKey].Gender.ToString(),
+                    controller.AthleteList[athleteKey].Age.ToString()
                 })
-                { Tag = athlete };
+                { Tag = controller.AthleteList[athleteKey] };
                 AthleteListView.Items.Add(item);
             }
         }
@@ -220,10 +154,36 @@ namespace GuiLayer
                 }
                 RefreshObserverListView();
                 RefreshListViews();
-                //RefreshAthleteListView();
             }
         }
 
-        
+        private void UnsubscribeButton_Click(object sender, EventArgs e)
+        {
+            if (_selectedObserver != null)
+            {
+                foreach (ListViewItem item in SubscribedListView.SelectedItems)
+                {
+                    Athlete athlete = item.Tag as Athlete;
+                    athlete?.removeObserver(_selectedObserver);
+                }
+                RefreshObserverListView();
+                RefreshListViews();
+            }
+        }
+
+        private void RefreshTimer()
+        {/**
+            while (true)
+            {
+                foreach(AthleteObserver observer in observerList)
+                {
+                    if (observer.updateNeeded)
+                    {
+                        observer.RefreshObserver();
+                    }
+                }
+                Thread.Sleep(33);
+            }**/
+        }
     }
 }

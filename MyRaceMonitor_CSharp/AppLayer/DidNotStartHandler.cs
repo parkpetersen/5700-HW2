@@ -9,9 +9,12 @@ namespace AppLayer
 {
     class DidNotStartHandler : ProcessStrategy
     {
-        public override void Process(AthleteUpdate updateMessage, List<Athlete> athleteList)
+        public override void Process(AthleteUpdate updateMessage, Dictionary<int, Athlete> athleteList)
         {
-            throw new NotImplementedException();
+            DidNotStartUpdate update = updateMessage as DidNotStartUpdate;
+            athleteList[update.BibNumber].DidNotStart = true;
+            athleteList[update.BibNumber].LastUpdate = update.Timestamp;
+            athleteList[update.BibNumber].notifyObservers();
         }
     }
 }

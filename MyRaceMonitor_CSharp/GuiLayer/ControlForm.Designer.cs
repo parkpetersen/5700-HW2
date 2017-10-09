@@ -49,7 +49,7 @@
             this.Age = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.AthleteListLabel = new System.Windows.Forms.Label();
             this.SubscribeButton = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.UnsubscribeButton = new System.Windows.Forms.Button();
             this.StartButton = new System.Windows.Forms.Button();
             this.RefreshButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -226,14 +226,15 @@
             this.SubscribeButton.UseVisualStyleBackColor = true;
             this.SubscribeButton.Click += new System.EventHandler(this.SubScribeButton_Click);
             // 
-            // button6
+            // UnsubscribeButton
             // 
-            this.button6.Location = new System.Drawing.Point(332, 393);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(62, 44);
-            this.button6.TabIndex = 8;
-            this.button6.Text = ">";
-            this.button6.UseVisualStyleBackColor = true;
+            this.UnsubscribeButton.Location = new System.Drawing.Point(332, 393);
+            this.UnsubscribeButton.Name = "UnsubscribeButton";
+            this.UnsubscribeButton.Size = new System.Drawing.Size(62, 44);
+            this.UnsubscribeButton.TabIndex = 8;
+            this.UnsubscribeButton.Text = ">";
+            this.UnsubscribeButton.UseVisualStyleBackColor = true;
+            this.UnsubscribeButton.Click += new System.EventHandler(this.UnsubscribeButton_Click);
             // 
             // StartButton
             // 
@@ -262,7 +263,7 @@
             this.ClientSize = new System.Drawing.Size(937, 495);
             this.Controls.Add(this.RefreshButton);
             this.Controls.Add(this.StartButton);
-            this.Controls.Add(this.button6);
+            this.Controls.Add(this.UnsubscribeButton);
             this.Controls.Add(this.SubscribeButton);
             this.Controls.Add(this.AthleteListLabel);
             this.Controls.Add(this.AthleteListView);
@@ -293,7 +294,7 @@
         private System.Windows.Forms.ListView AthleteListView;
         private System.Windows.Forms.Label AthleteListLabel;
         private System.Windows.Forms.Button SubscribeButton;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button UnsubscribeButton;
         private System.Windows.Forms.Button StartButton;
         private System.Windows.Forms.Button RefreshButton;
         private System.Windows.Forms.ColumnHeader BibNumber;

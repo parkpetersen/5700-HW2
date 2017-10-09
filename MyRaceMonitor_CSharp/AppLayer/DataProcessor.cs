@@ -13,7 +13,7 @@ namespace AppLayer
     {
         ProcessStrategy MyProcessStrategy;
         ProcessStrategyFactory strategyFactory = new ProcessStrategyFactory();
-        public List<Athlete> ProcessorAthleteList;
+        public Dictionary<int,Athlete> ProcessorAthleteList;
 
         public void ProcessUpdate(AthleteUpdate updateMessage)
         {

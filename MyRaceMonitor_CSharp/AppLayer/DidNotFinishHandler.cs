@@ -9,9 +9,12 @@ namespace AppLayer
 {
     class DidNotFinishHandler : ProcessStrategy
     {
-        public override void Process(AthleteUpdate updateMessage, List<Athlete> athleteList)
+        public override void Process(AthleteUpdate updateMessage, Dictionary<int, Athlete> athleteList)
         {
-            throw new NotImplementedException();
+            DidNotFinishUpdate update = updateMessage as DidNotFinishUpdate;
+            athleteList[update.BibNumber].DidNotFinish = true;
+            athleteList[update.BibNumber].LastUpdate = update.Timestamp;
+            athleteList[update.BibNumber].notifyObservers();
         }
     }
 }

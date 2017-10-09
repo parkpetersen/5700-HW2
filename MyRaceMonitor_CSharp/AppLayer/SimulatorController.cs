@@ -7,11 +7,11 @@ namespace AppLayer
     public class SimulatorController
     {
         private SimulatedDataSource _simluatedData;
-        public List<Athlete> AthleteList;
+        public Dictionary<int,Athlete> AthleteList;
         public void Run(string inputFileName)
         {
             DataProcessor handler = new DataProcessor();
-            AthleteList = new List<Athlete>();
+            AthleteList = new Dictionary<int, Athlete>();
             handler.ProcessorAthleteList = AthleteList;
             _simluatedData = new SimulatedDataSource()
             {

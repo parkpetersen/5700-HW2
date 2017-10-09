@@ -10,7 +10,7 @@ namespace AppLayer
 { 
     public abstract class AthleteObserver : Form
     {
-        bool updateNeeded = false;
+        public bool updateNeeded = false;
         public List<Athlete> ObservedAthleteList;
         private readonly object _myLock = new object();
 
@@ -41,5 +41,7 @@ namespace AppLayer
         {
 
         }
+
+        public abstract void RefreshObserver(object sender, EventArgs args);
     }
 }

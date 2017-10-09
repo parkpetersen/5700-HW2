@@ -13,10 +13,13 @@ namespace AppLayer
         public string Lastname { get; set; }
         public string Gender { get; set; }
         public int Age { get; set; }
-        public string StartTime { get; set; }
-        public string FinishedTime { get; set; }
-        public float Location { get; set; }
+        public DateTime StartTime { get; set; }
+        public DateTime FinishedTime { get; set; }
+        public double Location { get; set; }
         public List<AthleteObserver> ObserverList;
+        public DateTime LastUpdate { get; set; }
+        public bool DidNotStart = false;
+        public bool DidNotFinish = false;
 
         public Athlete(int bibNum, string fName, string lName, string gender, int age)
         {
@@ -26,9 +29,10 @@ namespace AppLayer
             Lastname = lName;
             Gender = gender;
             Age = age;
-            StartTime = "No Start";
-            FinishedTime = "No Finish";
+            StartTime = new DateTime(0000, 0, 0, 0, 0, 0, 0);
+            FinishedTime = new DateTime(0000,0,0,0,0,0,0);
             Location = 0;
+            LastUpdate = new DateTime(0000, 0, 0, 0, 0, 0, 0);
         }
         
         public void registerObserver(AthleteObserver observer)

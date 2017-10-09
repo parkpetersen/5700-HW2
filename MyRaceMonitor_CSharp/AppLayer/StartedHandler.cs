@@ -9,9 +9,12 @@ namespace AppLayer
 {
     class StartedHandler : ProcessStrategy
     {
-        public override void Process(AthleteUpdate updateMessage, List<Athlete> athleteList)
+        public override void Process(AthleteUpdate updateMessage, Dictionary<int, Athlete> athleteList)
         {
-            throw new NotImplementedException();
+            StartedUpdate update = updateMessage as StartedUpdate;
+            athleteList[update.BibNumber].StartTime = update.OfficialStartTime;
+            athleteList[update.BibNumber].LastUpdate = update.Timestamp;
+            athleteList[update.BibNumber].notifyObservers();
         }
     }
 }
