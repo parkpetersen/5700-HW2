@@ -55,6 +55,12 @@
     <Compile Include="ControlForm.Designer.cs">
       <DependentUpon>ControlForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GraphicalDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GraphicalDisplay.Designer.cs">
+      <DependentUpon>GraphicalDisplay.cs</DependentUpon>
+    </Compile>
     <Compile Include="ListDisplay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,6 +70,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="ControlForm.resx">
       <DependentUpon>ControlForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GraphicalDisplay.resx">
+      <DependentUpon>GraphicalDisplay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ListDisplay.resx">
       <DependentUpon>ListDisplay.cs</DependentUpon>

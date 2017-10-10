@@ -18,11 +18,9 @@ namespace MyRaceMonitor
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
             Application.Run(new ControlForm());
-            //ControlForm controlForm = new ControlForm();
-            //controlForm.Show();
-            //SimulatorController controller = new SimulatorController();
-            //controller.Run("../../../SimulationData/Short Race Simulation-01.csv");
+            
         }
     }
 }

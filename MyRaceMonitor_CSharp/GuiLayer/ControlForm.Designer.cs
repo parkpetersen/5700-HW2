@@ -34,7 +34,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.GraphicDisplayButton = new System.Windows.Forms.Button();
             this.ListDisplayButton = new System.Windows.Forms.Button();
             this.SubscribedListView = new System.Windows.Forms.ListView();
             this.Athlete = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -52,6 +52,8 @@
             this.UnsubscribeButton = new System.Windows.Forms.Button();
             this.StartButton = new System.Windows.Forms.Button();
             this.RefreshButton = new System.Windows.Forms.Button();
+            this.LengthEntryBox = new System.Windows.Forms.TextBox();
+            this.InstructionLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -85,7 +87,7 @@
             // 
             this.groupBox1.Controls.Add(this.button4);
             this.groupBox1.Controls.Add(this.button3);
-            this.groupBox1.Controls.Add(this.button2);
+            this.groupBox1.Controls.Add(this.GraphicDisplayButton);
             this.groupBox1.Controls.Add(this.ListDisplayButton);
             this.groupBox1.Location = new System.Drawing.Point(452, 25);
             this.groupBox1.Name = "groupBox1";
@@ -114,14 +116,15 @@
             this.button3.Text = "button3";
             this.button3.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // GraphicDisplayButton
             // 
-            this.button2.Location = new System.Drawing.Point(135, 44);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(78, 38);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.GraphicDisplayButton.Location = new System.Drawing.Point(135, 44);
+            this.GraphicDisplayButton.Name = "GraphicDisplayButton";
+            this.GraphicDisplayButton.Size = new System.Drawing.Size(78, 38);
+            this.GraphicDisplayButton.TabIndex = 1;
+            this.GraphicDisplayButton.Text = "Graphic Display";
+            this.GraphicDisplayButton.UseVisualStyleBackColor = true;
+            this.GraphicDisplayButton.Click += new System.EventHandler(this.GraphicDisplayButton_Click);
             // 
             // ListDisplayButton
             // 
@@ -238,7 +241,7 @@
             // 
             // StartButton
             // 
-            this.StartButton.Location = new System.Drawing.Point(773, 76);
+            this.StartButton.Location = new System.Drawing.Point(768, 169);
             this.StartButton.Name = "StartButton";
             this.StartButton.Size = new System.Drawing.Size(104, 25);
             this.StartButton.TabIndex = 9;
@@ -256,11 +259,29 @@
             this.RefreshButton.UseVisualStyleBackColor = true;
             this.RefreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
             // 
+            // LengthEntryBox
+            // 
+            this.LengthEntryBox.Location = new System.Drawing.Point(735, 126);
+            this.LengthEntryBox.Name = "LengthEntryBox";
+            this.LengthEntryBox.Size = new System.Drawing.Size(172, 20);
+            this.LengthEntryBox.TabIndex = 11;
+            // 
+            // InstructionLabel
+            // 
+            this.InstructionLabel.AutoSize = true;
+            this.InstructionLabel.Location = new System.Drawing.Point(704, 94);
+            this.InstructionLabel.Name = "InstructionLabel";
+            this.InstructionLabel.Size = new System.Drawing.Size(221, 13);
+            this.InstructionLabel.TabIndex = 12;
+            this.InstructionLabel.Text = "Enter course length and click Start Simulation";
+            // 
             // ControlForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(937, 495);
+            this.Controls.Add(this.InstructionLabel);
+            this.Controls.Add(this.LengthEntryBox);
             this.Controls.Add(this.RefreshButton);
             this.Controls.Add(this.StartButton);
             this.Controls.Add(this.UnsubscribeButton);
@@ -287,7 +308,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button GraphicDisplayButton;
         private System.Windows.Forms.Button ListDisplayButton;
         private System.Windows.Forms.ListView SubscribedListView;
         private System.Windows.Forms.Label ObservedAthletesLabel;
@@ -306,6 +327,8 @@
         private System.Windows.Forms.ColumnHeader Athlete;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.TextBox LengthEntryBox;
+        private System.Windows.Forms.Label InstructionLabel;
     }
 }
 

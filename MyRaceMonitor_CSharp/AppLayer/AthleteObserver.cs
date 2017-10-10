@@ -8,11 +8,11 @@ using System.Drawing;
 
 namespace AppLayer
 { 
-    public abstract class AthleteObserver : Form
+    public class AthleteObserver : Form
     {
         public bool updateNeeded = false;
         public List<Athlete> ObservedAthleteList;
-        private readonly object _myLock = new object();
+        //private readonly object _myLock = new object();
 
         public void Notify(Athlete athlete)
         {
@@ -42,6 +42,6 @@ namespace AppLayer
 
         }
 
-        public abstract void RefreshObserver(object sender, EventArgs args);
+        public virtual void RefreshObserver() { }
     }
 }

@@ -24,3 +24,4 @@ C:\Users\Parker Petersen\source\repos\RaceMonitor\MyRaceMonitor_CSharp\GUILayer\
 C:\Users\Parker Petersen\source\repos\RaceMonitor\MyRaceMonitor_CSharp\GUILayer\obj\Debug\GuiLayer.dll
 C:\Users\Parker Petersen\source\repos\RaceMonitor\MyRaceMonitor_CSharp\GUILayer\obj\Debug\GuiLayer.pdb
 C:\Users\Parker Petersen\source\repos\RaceMonitor\MyRaceMonitor_CSharp\GUILayer\obj\Debug\GuiLayer.ListDisplay.resources
+C:\Users\Parker Petersen\source\repos\RaceMonitor\MyRaceMonitor_CSharp\GuiLayer\obj\Debug\GuiLayer.GraphicalDisplay.resources

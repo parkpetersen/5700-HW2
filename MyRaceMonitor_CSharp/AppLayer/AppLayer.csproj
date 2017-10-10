@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Athlete.cs" />
+    <Compile Include="Course.cs" />
     <Compile Include="FinishedHandler.cs" />
     <Compile Include="DidNotStartHandler.cs" />
     <Compile Include="DataProcessor.cs" />

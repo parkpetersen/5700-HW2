@@ -17,6 +17,7 @@ namespace AppLayer
 
         public void ProcessUpdate(AthleteUpdate updateMessage)
         {
+            Console.WriteLine(updateMessage.ToString());
             // TODO: Do something to process the update message, depending on the concrete type of message
             MyProcessStrategy = strategyFactory.createProcessStrategy(updateMessage);
             MyProcessStrategy.Process(updateMessage, ProcessorAthleteList);

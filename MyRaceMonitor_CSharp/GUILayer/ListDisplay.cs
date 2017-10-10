@@ -20,11 +20,12 @@ namespace GuiLayer
         }
 
         
-        public override void RefreshObserver(object sender, EventArgs args)
+        public override void RefreshObserver()
         {
-            if (!this.InvokeRequired)
+            if (InvokeRequired)
             {
-                this.Invoke(new EventHandler(RefreshObserver), new object[] { sender, args });
+                Invoke((MethodInvoker)delegate { RefreshObserver(); });
+                return;
             }
             AthleteDisplayView.Items.Clear();
             foreach (Athlete athlete in ObservedAthleteList)

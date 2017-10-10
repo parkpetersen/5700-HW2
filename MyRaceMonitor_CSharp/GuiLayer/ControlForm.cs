@@ -17,6 +17,8 @@ namespace GuiLayer
         public SimulatorController controller;
         public List<AthleteObserver> observerList;
         private AthleteObserver _selectedObserver = null;
+        public static Course myCourse;
+        public delegate void RefreshDelegate();
 
         public ControlForm()
         {
@@ -81,20 +83,38 @@ namespace GuiLayer
 
         private void StartButton_Click(object sender, EventArgs e)
         {
-            StartButton.Hide();
-            observerList = new List<AthleteObserver>();
-            controller = new SimulatorController();
-            Thread myThread = new Thread(StartSimulation);
-            myThread.Start();
-            Thread myThread2 = new Thread(RefreshTimer);
-            myThread2.Start();
+            if (ValidateCourseLength())
+            {
+                StartButton.Hide();
+                LengthEntryBox.Hide();
+                InstructionLabel.Hide();
+                myCourse = new Course(float.Parse(LengthEntryBox.Text, System.Globalization.CultureInfo.InvariantCulture));
+                observerList = new List<AthleteObserver>();
+                Thread myThread = new Thread(StartSimulation);
+                myThread.Start();
+                Thread myThread2 = new Thread(RefreshTimer);
+                myThread2.Start();
+            }
+            else
+            {
+                LengthEntryBox.Clear();
+                InstructionLabel.Text = "Must be a number.";
+            }
+            
 
          }
+
+        private bool ValidateCourseLength()
+        {
+            string line = LengthEntryBox.Text;
+            float length;
+            return float.TryParse(line, out length);
+        }
 
         public void StartSimulation()
         {
             controller = new SimulatorController();
-            controller.Run("../../../SimulationData/Short Race Simulation-01.csv");
+            controller.Run("../../../SimulationData/Century Simulation-01.csv");
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -172,7 +192,7 @@ namespace GuiLayer
         }
 
         private void RefreshTimer()
-        {/**
+        {
             while (true)
             {
                 foreach(AthleteObserver observer in observerList)
@@ -183,7 +203,18 @@ namespace GuiLayer
                     }
                 }
                 Thread.Sleep(33);
-            }**/
+            }
+        }
+
+        private void GraphicDisplayButton_Click(object sender, EventArgs e)
+        {
+            GraphicalDisplay graphicDisplay = new GraphicalDisplay();
+            graphicDisplay.title = $"Display #{observerList.Count() + 1} (Graphical Display)";
+            observerList.Add(graphicDisplay);
+            RefreshObserverListView();
+            graphicDisplay.Show();
+            graphicDisplay.RefreshObserver();
+
         }
     }
 }
