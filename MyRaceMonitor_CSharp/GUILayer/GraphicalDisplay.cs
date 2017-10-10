@@ -61,6 +61,12 @@ namespace GuiLayer
         };
         public override void RefreshObserver()
         {
+
+            if (InvokeRequired)
+            {
+                Invoke((MethodInvoker)delegate { RefreshObserver(); });
+                return;
+            }
             Pen pen = new Pen(Color.Black);
             Graphics graphics = boxPanel.CreateGraphics();
             graphics.Clear(Color.White);
@@ -77,12 +83,18 @@ namespace GuiLayer
             graphics.DrawLine(pen, endX, endY - 20, endX, endY + 20);
             //StartLabel.Text = "0";
             //FinishLabel.Text = $"{length}";
-
+            ColorKeyListView.Items.Clear();
             foreach (Athlete athlete in ObservedAthleteList)
             {
                 float lineLocation = Convert.ToSingle(athlete.Location) / (courseLength / lineLength);
                 pen.Color = Colors[athlete.BibNumber % Colors.Length];
                 graphics.DrawLine(pen, startX + lineLocation, startY - 10, startX + lineLocation, startY + 10);
+                ListViewItem item = new ListViewItem(new[]
+                {
+                    athlete.BibNumber.ToString(),
+                    pen.Color.ToString()
+                });
+                ColorKeyListView.Items.Add(item);
             }
         }
     }

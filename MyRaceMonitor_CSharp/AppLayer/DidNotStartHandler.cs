@@ -13,6 +13,7 @@ namespace AppLayer
         {
             DidNotStartUpdate update = updateMessage as DidNotStartUpdate;
             athleteList[update.BibNumber].DidNotStart = true;
+            athleteList[update.BibNumber].Location = -1000;
             athleteList[update.BibNumber].LastUpdate = update.Timestamp;
             athleteList[update.BibNumber].notifyObservers();
         }

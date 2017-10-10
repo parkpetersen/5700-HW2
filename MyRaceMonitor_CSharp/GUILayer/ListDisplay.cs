@@ -17,6 +17,7 @@ namespace GuiLayer
         {
             ObservedAthleteList = new List<Athlete>();
             InitializeComponent();
+            this.DoubleBuffered = true;
         }
 
         

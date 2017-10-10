@@ -22,7 +22,7 @@ namespace AppLayer
             _simluatedData.Start();
 
             // Let the simulator run for 3 minutes
-            Thread.Sleep(180000);
+            Thread.Sleep(1800000000);
 
             _simluatedData.Stop();
         }

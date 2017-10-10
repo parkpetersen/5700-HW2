@@ -23,6 +23,7 @@ namespace GuiLayer
         public ControlForm()
         {
             InitializeComponent();
+            this.DoubleBuffered = true;
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -202,7 +203,7 @@ namespace GuiLayer
                         observer.RefreshObserver();
                     }
                 }
-                Thread.Sleep(33);
+                Thread.Sleep(1000);
             }
         }
 
