@@ -33,7 +33,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.AthleteDescriptionButton = new System.Windows.Forms.Button();
             this.GraphicDisplayButton = new System.Windows.Forms.Button();
             this.ListDisplayButton = new System.Windows.Forms.Button();
             this.SubscribedListView = new System.Windows.Forms.ListView();
@@ -86,7 +86,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.AthleteDescriptionButton);
             this.groupBox1.Controls.Add(this.GraphicDisplayButton);
             this.groupBox1.Controls.Add(this.ListDisplayButton);
             this.groupBox1.Location = new System.Drawing.Point(452, 25);
@@ -107,14 +107,15 @@
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
-            // button3
+            // AthleteDescriptionButton
             // 
-            this.button3.Location = new System.Drawing.Point(29, 114);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(83, 37);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            this.AthleteDescriptionButton.Location = new System.Drawing.Point(29, 114);
+            this.AthleteDescriptionButton.Name = "AthleteDescriptionButton";
+            this.AthleteDescriptionButton.Size = new System.Drawing.Size(83, 37);
+            this.AthleteDescriptionButton.TabIndex = 2;
+            this.AthleteDescriptionButton.Text = "Athlete Description";
+            this.AthleteDescriptionButton.UseVisualStyleBackColor = true;
+            this.AthleteDescriptionButton.Click += new System.EventHandler(this.AthleteDescriptionButton_Click);
             // 
             // GraphicDisplayButton
             // 
@@ -307,7 +308,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button AthleteDescriptionButton;
         private System.Windows.Forms.Button GraphicDisplayButton;
         private System.Windows.Forms.Button ListDisplayButton;
         private System.Windows.Forms.ListView SubscribedListView;

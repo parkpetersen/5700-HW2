@@ -29,10 +29,10 @@ namespace AppLayer
             Lastname = lName;
             Gender = gender;
             Age = age;
-            StartTime = new DateTime(1900, 1, 1, 1, 1, 1, 1);
-            FinishedTime = new DateTime(1900, 1, 1, 1, 1, 1, 1);
+            StartTime = DateTime.MinValue;
+            FinishedTime = DateTime.MinValue;
             Location = 0;
-            LastUpdate = new DateTime(1900, 1, 1, 1, 1, 1, 1);
+            LastUpdate = DateTime.MinValue;
         }
         
         public void registerObserver(AthleteObserver observer)

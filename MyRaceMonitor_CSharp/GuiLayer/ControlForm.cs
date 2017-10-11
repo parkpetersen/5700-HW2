@@ -217,5 +217,12 @@ namespace GuiLayer
             graphicDisplay.RefreshObserver();
 
         }
+
+        private void AthleteDescriptionButton_Click(object sender, EventArgs e)
+        {
+            DescriptionSelecter selecter = new DescriptionSelecter(controller.AthleteList);
+            selecter.Show();
+       
+        }
     }
 }
