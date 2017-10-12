@@ -32,7 +32,7 @@
             this.Title = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button4 = new System.Windows.Forms.Button();
+            this.EmailButton = new System.Windows.Forms.Button();
             this.AthleteDescriptionButton = new System.Windows.Forms.Button();
             this.GraphicDisplayButton = new System.Windows.Forms.Button();
             this.ListDisplayButton = new System.Windows.Forms.Button();
@@ -85,7 +85,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.button4);
+            this.groupBox1.Controls.Add(this.EmailButton);
             this.groupBox1.Controls.Add(this.AthleteDescriptionButton);
             this.groupBox1.Controls.Add(this.GraphicDisplayButton);
             this.groupBox1.Controls.Add(this.ListDisplayButton);
@@ -97,15 +97,15 @@
             this.groupBox1.Text = "Create New Observer";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // button4
+            // EmailButton
             // 
-            this.button4.Location = new System.Drawing.Point(135, 114);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(77, 37);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.EmailButton.Location = new System.Drawing.Point(135, 114);
+            this.EmailButton.Name = "EmailButton";
+            this.EmailButton.Size = new System.Drawing.Size(77, 37);
+            this.EmailButton.TabIndex = 3;
+            this.EmailButton.Text = "Email Observer";
+            this.EmailButton.UseVisualStyleBackColor = true;
+            this.EmailButton.Click += new System.EventHandler(this.EmailButton_Click);
             // 
             // AthleteDescriptionButton
             // 
@@ -307,7 +307,7 @@
         private System.Windows.Forms.ListView ObserverListView;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button EmailButton;
         private System.Windows.Forms.Button AthleteDescriptionButton;
         private System.Windows.Forms.Button GraphicDisplayButton;
         private System.Windows.Forms.Button ListDisplayButton;

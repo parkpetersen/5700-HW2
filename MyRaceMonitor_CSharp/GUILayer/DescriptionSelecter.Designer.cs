@@ -31,8 +31,8 @@
             this.AthleteListView = new System.Windows.Forms.ListView();
             this.BibNumber = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.CreateButton = new System.Windows.Forms.Button();
-            this.ShowFirstNameBox = new System.Windows.Forms.CheckBox();
-            this.ShowLastNameBox = new System.Windows.Forms.CheckBox();
+            this.ShowNameBox = new System.Windows.Forms.CheckBox();
+            this.ShowLocationBox = new System.Windows.Forms.CheckBox();
             this.ShowAgeBox = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
@@ -63,25 +63,25 @@
             this.CreateButton.UseVisualStyleBackColor = true;
             this.CreateButton.Click += new System.EventHandler(this.CreateButton_Click);
             // 
-            // ShowFirstNameBox
+            // ShowNameBox
             // 
-            this.ShowFirstNameBox.AutoSize = true;
-            this.ShowFirstNameBox.Location = new System.Drawing.Point(105, 39);
-            this.ShowFirstNameBox.Name = "ShowFirstNameBox";
-            this.ShowFirstNameBox.Size = new System.Drawing.Size(106, 17);
-            this.ShowFirstNameBox.TabIndex = 3;
-            this.ShowFirstNameBox.Text = "Show First Name";
-            this.ShowFirstNameBox.UseVisualStyleBackColor = true;
+            this.ShowNameBox.AutoSize = true;
+            this.ShowNameBox.Location = new System.Drawing.Point(105, 39);
+            this.ShowNameBox.Name = "ShowNameBox";
+            this.ShowNameBox.Size = new System.Drawing.Size(84, 17);
+            this.ShowNameBox.TabIndex = 3;
+            this.ShowNameBox.Text = "Show Name";
+            this.ShowNameBox.UseVisualStyleBackColor = true;
             // 
-            // ShowLastNameBox
+            // ShowLocationBox
             // 
-            this.ShowLastNameBox.AutoSize = true;
-            this.ShowLastNameBox.Location = new System.Drawing.Point(247, 39);
-            this.ShowLastNameBox.Name = "ShowLastNameBox";
-            this.ShowLastNameBox.Size = new System.Drawing.Size(107, 17);
-            this.ShowLastNameBox.TabIndex = 4;
-            this.ShowLastNameBox.Text = "Show Last Name";
-            this.ShowLastNameBox.UseVisualStyleBackColor = true;
+            this.ShowLocationBox.AutoSize = true;
+            this.ShowLocationBox.Location = new System.Drawing.Point(247, 39);
+            this.ShowLocationBox.Name = "ShowLocationBox";
+            this.ShowLocationBox.Size = new System.Drawing.Size(97, 17);
+            this.ShowLocationBox.TabIndex = 4;
+            this.ShowLocationBox.Text = "Show Location";
+            this.ShowLocationBox.UseVisualStyleBackColor = true;
             // 
             // ShowAgeBox
             // 
@@ -99,8 +99,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(581, 261);
             this.Controls.Add(this.ShowAgeBox);
-            this.Controls.Add(this.ShowLastNameBox);
-            this.Controls.Add(this.ShowFirstNameBox);
+            this.Controls.Add(this.ShowLocationBox);
+            this.Controls.Add(this.ShowNameBox);
             this.Controls.Add(this.CreateButton);
             this.Controls.Add(this.AthleteListView);
             this.Name = "DescriptionSelecter";
@@ -115,8 +115,8 @@
         private System.Windows.Forms.ListView AthleteListView;
         private System.Windows.Forms.ColumnHeader BibNumber;
         private System.Windows.Forms.Button CreateButton;
-        private System.Windows.Forms.CheckBox ShowFirstNameBox;
-        private System.Windows.Forms.CheckBox ShowLastNameBox;
+        private System.Windows.Forms.CheckBox ShowNameBox;
+        private System.Windows.Forms.CheckBox ShowLocationBox;
         private System.Windows.Forms.CheckBox ShowAgeBox;
     }
 }

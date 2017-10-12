@@ -49,6 +49,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AgeDecorator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgeDecorator.Designer.cs">
+      <DependentUpon>AgeDecorator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AthleteDescriber.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AthleteDescriber.Designer.cs">
+      <DependentUpon>AthleteDescriber.cs</DependentUpon>
+    </Compile>
     <Compile Include="ControlForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,6 +72,12 @@
     </Compile>
     <Compile Include="DescriptionSelecter.Designer.cs">
       <DependentUpon>DescriptionSelecter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EmailObserver.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmailObserver.Designer.cs">
+      <DependentUpon>EmailObserver.cs</DependentUpon>
     </Compile>
     <Compile Include="GraphicalDisplay.cs">
       <SubType>Form</SubType>
@@ -73,12 +91,30 @@
     <Compile Include="ListDisplay.Designer.cs">
       <DependentUpon>ListDisplay.cs</DependentUpon>
     </Compile>
+    <Compile Include="LocationDecorator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LocationDecorator.Designer.cs">
+      <DependentUpon>LocationDecorator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NameDecorator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NameDecorator.Designer.cs">
+      <DependentUpon>NameDecorator.cs</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AthleteDescriber.resx">
+      <DependentUpon>AthleteDescriber.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ControlForm.resx">
       <DependentUpon>ControlForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DescriptionSelecter.resx">
       <DependentUpon>DescriptionSelecter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmailObserver.resx">
+      <DependentUpon>EmailObserver.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GraphicalDisplay.resx">
       <DependentUpon>GraphicalDisplay.cs</DependentUpon>

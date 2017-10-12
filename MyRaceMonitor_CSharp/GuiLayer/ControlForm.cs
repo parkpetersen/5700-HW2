@@ -15,10 +15,10 @@ namespace GuiLayer
     public partial class ControlForm : Form
     {
         public SimulatorController controller;
-        public List<AthleteObserver> observerList;
+        public static List<AthleteObserver> observerList;
         private AthleteObserver _selectedObserver = null;
         public static Course myCourse;
-        public delegate void RefreshDelegate();
+        //public delegate void RefreshDelegate();
 
         public ControlForm()
         {
@@ -118,9 +118,12 @@ namespace GuiLayer
             controller.Run("../../../SimulationData/Century Simulation-01.csv");
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void EmailButton_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("HI there");
+            EmailObserver emailSender = new EmailObserver(controller.AthleteList);
+            observerList.Add(emailSender);
+            emailSender.Show();
+
         }
 
         private void RefreshButton_Click(object sender, EventArgs e)

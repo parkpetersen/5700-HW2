@@ -25,7 +25,35 @@ namespace GuiLayer
 
         private void CreateButton_Click(object sender, EventArgs e)
         {
+            AthleteDescriber describer = new AthleteDescriber();
 
+            if (AthleteListView.SelectedItems != null)
+            {
+                foreach(ListViewItem item in AthleteListView.SelectedItems)
+                {
+                    Athlete observedAthlete = item.Tag as Athlete;
+                    describer.ObservedAthleteList.Add(observedAthlete);
+                }
+                
+
+            }
+            if (ShowNameBox.Checked)
+            {
+                describer = new NameDecorator(describer);
+            }
+            if (ShowAgeBox.Checked)
+            {
+                describer = new AgeDecorator(describer);
+            }
+            if (ShowLocationBox.Checked)
+            {
+                describer = new LocationDecorator(describer);
+            }
+            describer.RegisterWithAthletes();
+            ControlForm.observerList.Add(describer);
+            describer.RefreshObserver();
+            this.Hide();
+            describer.Show();
         }
             
             
