@@ -31,3 +31,5 @@ C:\Users\Parker Petersen\source\repos\RaceMonitor\MyRaceMonitor_CSharp\GuiLayer\
 C:\Users\parkp\Desktop\5700\RaceMonitor\5700-HW2\MyRaceMonitor_CSharp\GuiLayer\obj\Debug\GuiLayer.AthleteDescriber.resources
 C:\Users\parkp\Desktop\5700\RaceMonitor\5700-HW2\MyRaceMonitor_CSharp\GuiLayer\obj\Debug\GuiLayer.DescriptionSelecter.resources
 C:\Users\parkp\Desktop\5700\RaceMonitor\5700-HW2\MyRaceMonitor_CSharp\GuiLayer\obj\Debug\GuiLayer.EmailObserver.resources
+C:\Users\Parker Petersen\source\repos\RaceMonitor\MyRaceMonitor_CSharp\GuiLayer\obj\Debug\GuiLayer.AthleteDescriber.resources
+C:\Users\Parker Petersen\source\repos\RaceMonitor\MyRaceMonitor_CSharp\GuiLayer\obj\Debug\GuiLayer.EmailObserver.resources

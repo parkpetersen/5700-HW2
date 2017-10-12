@@ -16,7 +16,7 @@ namespace GuiLayer
     public partial class EmailObserver : AthleteObserver
     {
         NetworkCredential credentials = new NetworkCredential("programemail1234@gmail.com", "jimsemail1234");
-        SmtpClient client = new SmtpClient("smtp.gmail.com", 465);
+        SmtpClient client = new SmtpClient("smtp.gmail.com", 587);
         string toEmail;
         Athlete emailedAthlete;
         int counter = 0;
@@ -31,9 +31,8 @@ namespace GuiLayer
                 AthleteListview.Items.Add(item);
             }
             client.Credentials = credentials;
-            client.EnableSsl = true;
-            client.UseDefaultCredentials = false;
-            client.DeliveryMethod = SmtpDeliveryMethod.Network;
+            client.EnableSsl = Enabled;
+            //client.DeliveryMethod = SmtpDeliveryMethod.Network;
         }
         
 
