@@ -121,6 +121,7 @@ namespace GuiLayer
         private void EmailButton_Click(object sender, EventArgs e)
         {
             EmailObserver emailSender = new EmailObserver(controller.AthleteList);
+            emailSender.title = $"Display #{observerList.Count() + 1} (Email Observer)";
             observerList.Add(emailSender);
             emailSender.Show();
 
@@ -155,6 +156,12 @@ namespace GuiLayer
 
         public void RefreshObserverListView()
         {
+
+            if (InvokeRequired)
+            {
+                Invoke((MethodInvoker)delegate { RefreshObserverListView(); });
+                return;
+            }
             ObserverListView.Items.Clear();
             foreach (AthleteObserver observer in observerList)
             {
@@ -169,7 +176,8 @@ namespace GuiLayer
 
         private void SubScribeButton_Click(object sender, EventArgs e)
         {
-            if(_selectedObserver != null)
+            Type type = _selectedObserver.GetType();
+            if(_selectedObserver != null && !type.Equals(typeof(EmailObserver)) && !type.Equals(typeof(AthleteDescriber)) && !type.Equals(typeof(AgeDecorator)) && !type.Equals(typeof(NameDecorator)) && !type.Equals(typeof(LocationDecorator)))
             {
                 foreach(ListViewItem item in AthleteListView.SelectedItems)
                 {
@@ -178,6 +186,10 @@ namespace GuiLayer
                 }
                 RefreshObserverListView();
                 RefreshListViews();
+            }
+            else if (type.Equals(typeof(EmailObserver)) || type.Equals(typeof(AthleteDescriber)) || type.Equals(typeof(AgeDecorator)) || type.Equals(typeof(NameDecorator)) || type.Equals(typeof(LocationDecorator)))
+            {
+                ObservedAthletesLabel.Text = $"This type of observer can only observe one athlete.";
             }
         }
 
@@ -189,6 +201,7 @@ namespace GuiLayer
                 {
                     Athlete athlete = item.Tag as Athlete;
                     athlete?.removeObserver(_selectedObserver);
+                    _selectedObserver.ObservedAthleteList.Remove(athlete);
                 }
                 RefreshObserverListView();
                 RefreshListViews();
@@ -206,6 +219,8 @@ namespace GuiLayer
                         observer.RefreshObserver();
                     }
                 }
+                RefreshObserverListView();
+                //RefreshListViews();
                 Thread.Sleep(1000);
             }
         }

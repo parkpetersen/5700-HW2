@@ -62,6 +62,7 @@
             // columnHeader2
             // 
             this.columnHeader2.Text = "Color";
+            this.columnHeader2.Width = 286;
             // 
             // GraphicalDisplay
             // 

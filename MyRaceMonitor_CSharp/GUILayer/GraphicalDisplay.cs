@@ -81,8 +81,7 @@ namespace GuiLayer
             graphics.DrawLine(pen, startX, startY, endX, endY);
             graphics.DrawLine(pen, startX, startY - 20, startX, startY + 20);
             graphics.DrawLine(pen, endX, endY - 20, endX, endY + 20);
-            //StartLabel.Text = "0";
-            //FinishLabel.Text = $"{length}";
+       
             ColorKeyListView.Items.Clear();
             foreach (Athlete athlete in ObservedAthleteList)
             {

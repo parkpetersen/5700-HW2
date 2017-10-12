@@ -32,7 +32,6 @@ namespace GuiLayer
             }
             client.Credentials = credentials;
             client.EnableSsl = Enabled;
-            //client.DeliveryMethod = SmtpDeliveryMethod.Network;
         }
         
 
@@ -57,15 +56,35 @@ namespace GuiLayer
 
         }
 
+        private bool ValidateEmail(string email)
+        {
+            try
+            {
+                var address = new MailAddress(email);
+                return address.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
         private void SubscribeButton_Click(object sender, EventArgs e)
         {
             toEmail = EmailEntryBox.Text;
-            foreach(ListViewItem item in AthleteListview.SelectedItems)
+            if (ValidateEmail(toEmail))
             {
-                emailedAthlete = item.Tag as Athlete;
+                foreach (ListViewItem item in AthleteListview.SelectedItems)
+                {
+                    emailedAthlete = item.Tag as Athlete;
+                }
+                emailedAthlete.registerObserver(this);
+                this.Hide();
             }
-            emailedAthlete.registerObserver(this);
-            //sendMessage();
+            else
+            {
+                label1.Text = "Invalid Email.";
+            }
         }
 
         public override void RefreshObserver()

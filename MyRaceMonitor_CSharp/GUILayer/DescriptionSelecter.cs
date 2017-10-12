@@ -50,6 +50,7 @@ namespace GuiLayer
                 describer = new LocationDecorator(describer);
             }
             describer.RegisterWithAthletes();
+            describer.title = $"Display #{ControlForm.observerList.Count() + 1} (Athlete Description)";
             ControlForm.observerList.Add(describer);
             describer.RefreshObserver();
             this.Hide();
