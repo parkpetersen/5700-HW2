@@ -18,6 +18,7 @@ namespace GuiLayer
         public static List<AthleteObserver> observerList;
         private AthleteObserver _selectedObserver = null;
         public static Course myCourse;
+        bool active = false;
         //public delegate void RefreshDelegate();
 
         public ControlForm()
@@ -86,6 +87,7 @@ namespace GuiLayer
         {
             if (ValidateCourseLength())
             {
+                active = true;
                 StartButton.Hide();
                 LengthEntryBox.Hide();
                 InstructionLabel.Hide();
@@ -120,38 +122,47 @@ namespace GuiLayer
 
         private void EmailButton_Click(object sender, EventArgs e)
         {
-            EmailObserver emailSender = new EmailObserver(controller.AthleteList);
-            emailSender.title = $"Display #{observerList.Count() + 1} (Email Observer)";
-            observerList.Add(emailSender);
-            emailSender.Show();
+            if (active)
+            {
+                EmailObserver emailSender = new EmailObserver(controller.AthleteList);
+                emailSender.title = $"Display #{observerList.Count() + 1} (Email Observer)";
+                observerList.Add(emailSender);
+                emailSender.Show();
+            }
 
         }
 
         private void RefreshButton_Click(object sender, EventArgs e)
         {
-            AthleteListView.Items.Clear();
-            foreach (int athleteKey in controller.AthleteList.Keys)
+            if (active)
             {
-                ListViewItem item = new ListViewItem(new[]
+                AthleteListView.Items.Clear();
+                foreach (int athleteKey in controller.AthleteList.Keys)
                 {
+                    ListViewItem item = new ListViewItem(new[]
+                    {
                     controller.AthleteList[athleteKey].BibNumber.ToString(),
                     controller.AthleteList[athleteKey].FirstName.ToString(),
                     controller.AthleteList[athleteKey].Lastname.ToString(),
                     controller.AthleteList[athleteKey].Gender.ToString(),
                     controller.AthleteList[athleteKey].Age.ToString()
                 })
-                { Tag = controller.AthleteList[athleteKey] };
-                AthleteListView.Items.Add(item);
+                    { Tag = controller.AthleteList[athleteKey] };
+                    AthleteListView.Items.Add(item);
+                }
             }
         }
 
         private void ListDisplayButton_Click(object sender, EventArgs e)
         {
-            ListDisplay listDisplay = new ListDisplay();
-            listDisplay.title = $"Display #{observerList.Count() + 1} (List Display)";
-            observerList.Add(listDisplay);
-            RefreshObserverListView();
-            listDisplay.Show();
+            if (active)
+            {
+                ListDisplay listDisplay = new ListDisplay();
+                listDisplay.title = $"Display #{observerList.Count() + 1} (List Display)";
+                observerList.Add(listDisplay);
+                RefreshObserverListView();
+                listDisplay.Show();
+            }
         }
 
         public void RefreshObserverListView()
@@ -176,35 +187,41 @@ namespace GuiLayer
 
         private void SubScribeButton_Click(object sender, EventArgs e)
         {
-            Type type = _selectedObserver.GetType();
-            if(_selectedObserver != null && !type.Equals(typeof(EmailObserver)) && !type.Equals(typeof(AthleteDescriber)) && !type.Equals(typeof(AgeDecorator)) && !type.Equals(typeof(NameDecorator)) && !type.Equals(typeof(LocationDecorator)))
+            if (active)
             {
-                foreach(ListViewItem item in AthleteListView.SelectedItems)
+                Type type = _selectedObserver.GetType();
+                if (_selectedObserver != null && !type.Equals(typeof(EmailObserver)) && !type.Equals(typeof(AthleteDescriber)) && !type.Equals(typeof(AgeDecorator)) && !type.Equals(typeof(NameDecorator)) && !type.Equals(typeof(LocationDecorator)))
                 {
-                    Athlete athlete = item.Tag as Athlete;
-                    athlete?.registerObserver(_selectedObserver);
+                    foreach (ListViewItem item in AthleteListView.SelectedItems)
+                    {
+                        Athlete athlete = item.Tag as Athlete;
+                        athlete?.registerObserver(_selectedObserver);
+                    }
+                    RefreshObserverListView();
+                    RefreshListViews();
                 }
-                RefreshObserverListView();
-                RefreshListViews();
-            }
-            else if (type.Equals(typeof(EmailObserver)) || type.Equals(typeof(AthleteDescriber)) || type.Equals(typeof(AgeDecorator)) || type.Equals(typeof(NameDecorator)) || type.Equals(typeof(LocationDecorator)))
-            {
-                ObservedAthletesLabel.Text = $"This type of observer can only observe one athlete.";
+                else if (type.Equals(typeof(EmailObserver)) || type.Equals(typeof(AthleteDescriber)) || type.Equals(typeof(AgeDecorator)) || type.Equals(typeof(NameDecorator)) || type.Equals(typeof(LocationDecorator)))
+                {
+                    ObservedAthletesLabel.Text = $"This type of observer can only observe one athlete.";
+                }
             }
         }
 
         private void UnsubscribeButton_Click(object sender, EventArgs e)
         {
-            if (_selectedObserver != null)
+            if (active)
             {
-                foreach (ListViewItem item in SubscribedListView.SelectedItems)
+                if (_selectedObserver != null)
                 {
-                    Athlete athlete = item.Tag as Athlete;
-                    athlete?.removeObserver(_selectedObserver);
-                    _selectedObserver.ObservedAthleteList.Remove(athlete);
+                    foreach (ListViewItem item in SubscribedListView.SelectedItems)
+                    {
+                        Athlete athlete = item.Tag as Athlete;
+                        athlete?.removeObserver(_selectedObserver);
+                        _selectedObserver.ObservedAthleteList.Remove(athlete);
+                    }
+                    RefreshObserverListView();
+                    RefreshListViews();
                 }
-                RefreshObserverListView();
-                RefreshListViews();
             }
         }
 
@@ -227,19 +244,25 @@ namespace GuiLayer
 
         private void GraphicDisplayButton_Click(object sender, EventArgs e)
         {
-            GraphicalDisplay graphicDisplay = new GraphicalDisplay();
-            graphicDisplay.title = $"Display #{observerList.Count() + 1} (Graphical Display)";
-            observerList.Add(graphicDisplay);
-            RefreshObserverListView();
-            graphicDisplay.Show();
-            graphicDisplay.RefreshObserver();
+            if (active)
+            {
+                GraphicalDisplay graphicDisplay = new GraphicalDisplay();
+                graphicDisplay.title = $"Display #{observerList.Count() + 1} (Graphical Display)";
+                observerList.Add(graphicDisplay);
+                RefreshObserverListView();
+                graphicDisplay.Show();
+                graphicDisplay.RefreshObserver();
+            }
 
         }
 
         private void AthleteDescriptionButton_Click(object sender, EventArgs e)
         {
-            DescriptionSelecter selecter = new DescriptionSelecter(controller.AthleteList);
-            selecter.Show();
+            if (active)
+            {
+                DescriptionSelecter selecter = new DescriptionSelecter(controller.AthleteList);
+                selecter.Show();
+            }
        
         }
     }
